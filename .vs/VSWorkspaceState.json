@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\images",
+    "\\locale\\en"
   ],
   "PreviewInSolutionExplorer": false
 }
