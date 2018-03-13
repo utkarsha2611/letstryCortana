@@ -117,7 +117,7 @@ bot.dialog('CreateGameDialog', [
     }
 ]).triggerAction({ matches: [
     /(roll|role|throw|shoot).*(dice|die|dye|bones)/i,
-    /new game/i
+    /ew game/i
  ]});
 
 /**
