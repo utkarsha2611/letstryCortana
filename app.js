@@ -25,7 +25,7 @@ var bot = new builder.UniversalBot(connector, function (session,next) {
         .speak(speak(session, 'Hey there! How can I help you today?'))
         .addAttachment(card)
         .inputHint(builder.InputHint.acceptingInput);
-    session.show(msg);
+    session.send(msg);
     // session.send(msg).endDialog();
 }
 );
@@ -37,7 +37,8 @@ bot.dialog('nearest', function (session) {
         .speak(speak(session, 'The nearest center is Bangsar'))
         .inputHint(builder.InputHint.acceptingInput);
     session.send(msg);//.endDialog();
-    session.send(results.response.entity);
+   
+  
 }).triggerAction({ matches: 'nearest' });
 
 function speak(session, prompt) {
@@ -49,6 +50,9 @@ bot.dialog('feedback', function (session) {
     var azure = require('azure-storage');
     var queueSvc = azure.createQueueService('trialqueue', 'mCpXHxcpA8n2W/pBMJPg0gRMcUft/ECnd4J2NHz5ws6LrT37GgPOlAgJz4HLuhBVkt1Ghu05jNvC0yXQmcNHZg==');
     queueSvc.createQueueIfNotExists('trialqueue', function (error, results, response) {
+        session.send('I heard');
+          session.send(results.response.entity);
+        
         if (!error) {
             // Queue created or exists
         }
