@@ -32,7 +32,7 @@ var bot = new builder.UniversalBot(connector, function (session,next) {
 var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 bot.recognizer(recognizer);
 
-bot.dialog('nearest', function (session) {
+bot.dialog('nearest', function (session,results) {
     var msg = new builder.Message(session)
         .speak(speak(session, 'The nearest center is Bangsar'))
         .inputHint(builder.InputHint.acceptingInput);
