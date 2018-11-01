@@ -47,7 +47,7 @@ function speak(session, prompt) {
     return ssml.speak(localized);
 }
 
-bot.dialog('feedback', function (session) {
+bot.dialog('feedback', function (session,results) {
     var azure = require('azure-storage');
     var queueSvc = azure.createQueueService('trialqueue', 'mCpXHxcpA8n2W/pBMJPg0gRMcUft/ECnd4J2NHz5ws6LrT37GgPOlAgJz4HLuhBVkt1Ghu05jNvC0yXQmcNHZg==');
   session.send('I heard');
