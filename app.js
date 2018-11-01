@@ -49,9 +49,10 @@ function speak(session, prompt) {
 bot.dialog('feedback', function (session) {
     var azure = require('azure-storage');
     var queueSvc = azure.createQueueService('trialqueue', 'mCpXHxcpA8n2W/pBMJPg0gRMcUft/ECnd4J2NHz5ws6LrT37GgPOlAgJz4HLuhBVkt1Ghu05jNvC0yXQmcNHZg==');
-    queueSvc.createQueueIfNotExists('trialqueue', function (error, results, response) {
-        session.send('I heard');
+  session.send('I heard');
           session.send(results.response.entity);
+    queueSvc.createQueueIfNotExists('trialqueue', function (error, results, response) {
+        
         
         if (!error) {
             // Queue created or exists
