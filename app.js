@@ -62,4 +62,4 @@ bot.dialog('feedback', function (session) {
         .speak(speak(session, 'I am sorry to hear that. While I continue to learn, I will have our Service Rep get in touch with you soon. Have a good day ahead!'))
         .inputHint(builder.InputHint.acceptingInput);
     session.send(msg);//.endDialog();
-}).triggerAction({ matches:'feedback'});
+}).triggerAction({ matches: /^hi/i}});
