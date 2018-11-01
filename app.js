@@ -40,7 +40,7 @@ bot.dialog('nearest', function (session,results) {
    session.send('I heard');
           session.send(results.response);
   
-}).triggerAction({ matches:/^hi/i });
+}).triggerAction({ matches:/^Hi/i });
 
 function speak(session, prompt) {
     var localized = session.gettext(prompt);
