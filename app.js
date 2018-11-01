@@ -37,9 +37,10 @@ bot.dialog('nearest', function (session) {
         .speak(speak(session, 'The nearest center is Bangsar'))
         .inputHint(builder.InputHint.acceptingInput);
     session.send(msg);//.endDialog();
-   
+   session.send('I heard');
+          session.send(results.response);
   
-}).triggerAction({ matches: 'nearest' });
+}).triggerAction({ matches:/^hi/i });
 
 function speak(session, prompt) {
     var localized = session.gettext(prompt);
@@ -67,4 +68,4 @@ bot.dialog('feedback', function (session) {
         .speak(speak(session, 'I am sorry to hear that. While I continue to learn, I will have our Service Rep get in touch with you soon. Have a good day ahead!'))
         .inputHint(builder.InputHint.acceptingInput);
     session.send(msg);//.endDialog();
-}).triggerAction({ matches: /^hi/i}});
+}).triggerAction({ matches: /^no/i}});
